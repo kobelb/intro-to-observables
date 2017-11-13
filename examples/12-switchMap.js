@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Rx';
 import { delay } from 'bluebird';
 
 const requestSomething = (i) => {
-  await delay(50);
+  await delay(20);
   return i + 100;
 };
 
@@ -12,7 +12,7 @@ const render = async (i) => {
 };
 
 export default function () {
-  const click$ = Observable.interval(10).take(2);
+  const click$ = Observable.interval(1).take(2);
 
   return click$.switchMap(render);
 }
