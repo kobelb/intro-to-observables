@@ -1,13 +1,13 @@
 import { Observable } from 'rxjs/Rx';
 import { delay } from 'bluebird';
 
-const requestSomething = (i) => {
+const requestSomething = async (i) => {
   await delay(20);
   return i + 100;
 };
 
 const render = async (i) => {
-  const result = requestSomething(i)
+  const result = await requestSomething(i)
   return `<div>${result}</div>`;
 };
 
