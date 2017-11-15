@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Rx'
 
 export default function () {
-  return Observable.of(0)
-    .map(i => ++i);
+  return Observable.from([0, 1, 2])
+    .map(i => i * 100);
 }
